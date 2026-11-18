@@ -2,19 +2,9 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "marketplace";
-
+$db   = "pasarbengkulu";
 $conn = new mysqli($host, $user, $pass, $db);
-if($conn->connect_error){
-  die("Koneksi gagal: " . $conn->connect_error);
-}
-
-mysqli_report(MYSQLI_REPORT_OFF);
-
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
-if(!isset($_SESSION['keranjang'])){
-  $_SESSION['keranjang'] = [];
-}
+if($conn->connect_error){ die("Koneksi gagal: ".$conn->connect_error); }
+session_start();
+if(!isset($_SESSION['keranjang'])) $_SESSION['keranjang'] = [];
 ?>
